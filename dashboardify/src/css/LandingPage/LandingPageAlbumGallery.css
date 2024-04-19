@@ -1,0 +1,76 @@
+
+
+.landing-page-album-gallery{
+    width: 360px;
+    height: 520px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(199,199,199,0.7) 0%, rgba(190,190,190,0.7) 100%);
+
+    
+}
+
+.landing-page-album-covers
+{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-buttons{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fast-backwards-button{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.play-button{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.fast-forward-button{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.play-button-circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #DDDDDD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-album-covers img{
+    width: 330px;
+    height: 330px;
+}
+
