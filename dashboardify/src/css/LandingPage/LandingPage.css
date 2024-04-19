@@ -1,0 +1,110 @@
+
+
+.landing-page{
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(212,124,168,1) 0%, rgba(177,149,240,1) 36%, rgba(171,228,141,0.7) 100%);
+    display: flex;
+}
+
+.landing-page-title-and-button{
+    width: 55%;
+    height: 100%;
+    padding-left: 5%;
+}
+.landing-page-album-gallery-container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-title{
+    color: white;
+    font-size: 100px;
+    font-family: 'Inter Extra Bold';
+    width: 100%;
+    height: 49%;
+    display: flex;
+    align-items: end;
+}
+
+.landing-page-button{
+    width: 100%;
+    height: 45%;
+    padding-top: 5%;
+}
+
+.landing-page-button a{
+    text-decoration: none;
+    width: 300px;
+    height: 70px;
+}
+
+.landing-page-button button{
+    background-color: #6276bf;
+    border-radius: 35px;
+    outline: none;
+    border: none;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+
+.landing-page-button button span{
+    color: white;
+    font-size: 24px;
+    font-family: 'Inter Extra Bold';
+    z-index:2;
+    position: absolute;
+    width: 300px;
+    left:-20px;
+
+}
+
+
+.landing-page-button button:hover{
+    position: relative;
+    background: none;
+
+}
+
+@keyframes buttonBackground {
+    0%{
+        width: 70px;
+
+    }
+    50%{
+        width: 280px;
+
+    }
+    100%{
+        width: 70px;
+    }
+
+}
+
+.landing-page-button button:hover::after{
+    position: absolute;
+    content:"";
+    background-color: #6276BF;
+    /* border-radius: 50%; */
+    /* width: 70px; */
+    border-radius: 35px;
+
+    height: 70px;
+    left: 0;
+    top:0;
+    z-index: 1;
+    display: block;
+    animation: buttonBackground 1.5s ease; 
+    animation-fill-mode: forwards;
+}
+
