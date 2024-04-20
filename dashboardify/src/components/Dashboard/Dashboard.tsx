@@ -1,3 +1,4 @@
+import '../../css/Dashboard/Dashboard.css'
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -22,7 +23,42 @@ function Dashboard()
     },[])
     return(
         <div className="dashboard">
+            <div className='dashboard-header dashboard-header-blur'>
+                <div className='dashboard-header-header'>
 
+                </div>
+                <div className='dashboard-main-header'>
+                    <div className='dashboard-header-tops'>
+                        
+                    </div>
+                    <div className='dashboard-header-text'>
+                        <div className='dashboard-header-text-line'>
+                            <div className='dashboard-header-text-main your-text'>
+                                YOUR
+                            </div>
+                            <div className='dashboard-header-text-sub current-text'>
+                                CURRENT
+                            </div>
+                        </div>
+                        <div className='dashboard-header-text-line'>
+                            <div className='dashboard-header-text-sub custom-text'>
+                                CUSTOM
+                            </div>
+                            <div className='dashboard-header-text-main spotify-text'>
+                                SPOTIFY
+                            </div>
+                        </div>
+                        <div className='dashboard-header-text-line'>
+                            <div className='dashboard-header-text-main dashboard-text'>
+                                DASHBOARD
+                            </div>
+                            <div className='dashboard-header-text-sub dashboardify-text'>
+                                DASHBOARDIFY
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
