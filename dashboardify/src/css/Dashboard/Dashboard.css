@@ -2,11 +2,12 @@
     background: linear-gradient(180deg, rgba(138,232,238,1) 0%, rgba(124,194,219,1) 7%, rgba(110,154,200,1) 15%, rgba(85,86,167,1) 36%, rgba(42,25,107,1) 58%, rgba(21,6,79,1) 71%, rgba(19,9,61,1) 80%);
     width: 100%;
     height: 2000px;
+    position: relative;
 }
 
 .dashboard-header{
     width: 100%;
-    height: 370px;
+    height: 350px;
     z-index: 1;
 }
 
@@ -47,19 +48,20 @@
 
 .dashboard-header .dashboard-header-header{
     width: 100%;
-    height: 25%;
+    height: 20%;
 }
 
 .dashboard-header .dashboard-main-header
 {
     width: 100%;
-    height: 75%;
+    height: 80%;
     display: flex;
+    justify-content: space-between;
 }
 
 .dashboard-header .dashboard-main-header .dashboard-header-tops
 {
-    width: 50%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -145,4 +147,208 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.dashboard-top-songs-artists-section{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    top:500px;
+    z-index: 1;
+}
+
+.dashboard-top-songs-artists-section-text
+{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-top-songs-artists-section-tops
+{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboard-top-songs-artists-section-text .dashboard-tops-songs-artists-section-text-left-side
+{
+    width: 40%;
+    height: 50%;
+    padding-left: 10%;
+}
+
+
+.dashboard-top-songs-artists-section-text .dashboard-tops-songs-artists-section-text-number
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Bold';
+    font-size: 320px;
+    background: linear-gradient(150deg, rgba(255,255,255,1) 32%, rgba(226,226,226,1) 47%, rgba(90,90,90,1) 70%);   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-top-songs-artists-section-text .dashboard-tops-songs-artists-section-text-left-side .dashboard-tops-songs-artists-section-text-left-side-first-line
+{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    font-family: 'Inter Bold';
+    font-size: 40px;
+    color: #FFFFFF;
+    justify-content: right;
+    padding-left: 5%;
+    
+}
+
+.dashboard-top-songs-artists-section-text .dashboard-tops-songs-artists-section-text-left-side .dashboard-tops-songs-artists-section-text-left-side-rest
+{
+    width: 100%;
+    height: 70%;
+}
+
+
+
+.dashboard-top-songs-artists-section-text .dashboard-tops-songs-artists-section-text-left-side .dashboard-tops-songs-artists-section-text-left-side-line
+{
+    width: 80%;
+    height: 25%;
+    font-family: 'Inter Bold';
+    font-size: 30px;
+    color: hsla(0, 0%, 100%, 0.70);
+    display: flex;
+    align-items: center;
+    padding-left: 40%;
+    overflow: auto;
+}
+
+.songs-text
+{
+    justify-content: left;
+}
+
+.artists-text
+{
+    justify-content: right;
+}
+
+.albums-text
+{
+    justify-content: left;
+}
+
+.genres-text
+{
+    justify-content: right;
+}
+
+
+.dashboard-top-songs-artists-section-blur{
+    position: absolute;
+
+}
+
+.dashboard-top-songs-artists-section-blur::after,
+.dashboard-top-songs-artists-section-blur::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    z-index: -1;
+    filter:blur(120px);
+    border-radius: 50% 50% 50%;
+    margin-bottom: auto;
+    margin-top:auto;
+    margin-left: 20%;
+    margin-right: auto;
+    width: 300px;
+    height: 500px;
+}
+
+.dashboard-top-songs-artists-section-blur::after{
+    background-color: hsla(187, 100%, 49%, 0.8);
+
+    transform:rotate(80deg);
+}
+
+.dashboard-top-songs-artists-section-blur::before{
+    background-color: hsl(256, 49%, 54%);
+
+    transform:rotate(-60deg);
+}
+
+
+.dashboard-top-albums-section
+{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top:1150px;
+}
+
+
+.dashboard-top-albums-section-title
+{
+
+    width: 95%;
+    height: 15%;
+    color: hsla(0, 0%, 100%, 0.7);
+    font-family: 'Inter Bold';
+    font-size: 35px;
+    padding-left: 5%;
+}
+
+
+.dashboard-top-albums-gallery-section
+{
+    width: 100%;
+    height: 85%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.dashboard-top-albums-gallery-section-blur
+{
+    position: absolute;
+
+}
+
+
+.dashboard-top-albums-gallery-section-blur::after,
+.dashboard-top-albums-gallery-section-blur::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    z-index: 1;
+    filter:blur(200px);
+    border-radius: 50% 50% 50%;
+    margin-bottom: auto;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 600px;
+}
+
+.dashboard-top-albums-gallery-section-blur::after{
+    background-color: hsla(342, 96%, 44%, 0.9);
+
+    transform:rotate(60deg);
+}
+
+.dashboard-top-albums-gallery-section-blur::before{
+    background-color: hsla(14, 100%, 40%, 0.6);
+
+    transform:rotate(-60deg);
 }

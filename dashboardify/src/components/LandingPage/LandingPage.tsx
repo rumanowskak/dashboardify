@@ -69,7 +69,6 @@ function LandingPage()
             
         }
 
-        console.log(timers);
     }
 
     // --- END GRADIENT SCRIPT ---
@@ -77,6 +76,7 @@ function LandingPage()
     var timers: any = [];
     useEffect(()=> {
         timers.push(setInterval(updateGradient, 10));
+        localStorage.clear();
     }, []);
 
 
@@ -84,6 +84,13 @@ function LandingPage()
     const REDIRECTED_URI = "http://localhost:3000/dashboard/";
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
     const RESPONSE_TYPE = "token";
+
+    const scope: Array<string> = [
+        'user-top-read',
+        'user-read-private',
+        'user-read-email'
+    ];
+    const LOGIN_URI = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECTED_URI}&response_type=${RESPONSE_TYPE}&scope=${scope.join(' ')}&show_dialog=true`
 
     return(
         // style={{'background': gradientStyle}}
@@ -93,7 +100,7 @@ function LandingPage()
                     Dashboardify
                </div>
                <div className='landing-page-button'>
-                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECTED_URI}&response_type=${RESPONSE_TYPE}`}>
+                <a href={LOGIN_URI}>
                 <button><span>sign up &nbsp; with spotify</span></button>
                 </a>
                </div>
