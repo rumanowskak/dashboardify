@@ -5,6 +5,7 @@ import { UserTokenState } from '../../atoms/UserToken';
 import { useRecoilState } from 'recoil';
 import TopSongsArtistsPanel from './TopSongsArtistsPanel';
 import TopAlbumsGallery from './TopAlbumsGallery';
+import DashboardTopGenresPanel from './DashboardTopGenresPanel';
 
 function Dashboard()
 {
@@ -99,6 +100,14 @@ function Dashboard()
                 </div>
                 <div className='dashboard-top-albums-gallery-section dashboard-top-albums-gallery-section-blur'>
                     <TopAlbumsGallery/>
+                </div>
+            </div>
+            <div className='dashboard-top-genres-section dashboard-top-genres-section-blur'>
+                <div className='dashboard-top-genres-section-title'>
+                    TOP GENRES:
+                </div>
+                <div className='dashboard-top-genres-chart-section'>
+                    <DashboardTopGenresPanel/>
                 </div>
             </div>
         </div>

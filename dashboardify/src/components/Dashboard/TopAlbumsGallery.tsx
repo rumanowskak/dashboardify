@@ -62,8 +62,7 @@ function TopAlbumsGallery()
                             }
                         } 
                     }
-                    console.log(top_albums);
-                    console.log(top_albums_photos);
+
                     setAlbums(top_albums);
                     setAlbumsPhotos(top_albums_photos);
                     setLeftBackgroundPhoto(top_albums_photos[top_albums_photos.length-1]);

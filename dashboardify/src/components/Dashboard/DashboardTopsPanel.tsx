@@ -29,7 +29,6 @@ function DashboardTopsPanel()
 
     useEffect(()=>{
         let token = window.localStorage.getItem("token");
-        console.log(token);
         if (token)
         {
             axios.get("https://api.spotify.com/v1/me/top/artists",{
@@ -107,7 +106,6 @@ function DashboardTopsPanel()
     },[])
 
     useEffect(()=>{
-        console.log(iterator);
         handleTopsChange();
         return () => clearInterval(timer)
     },[iterator])

@@ -31,7 +31,6 @@ function TopSongsArtistsPanel({type}:TopSongsArtistsPanelInterface)
                     })
                     .then(res=>{
                         let names =[res.data.items[0].name, res.data.items[1].name , res.data.items[2].name, res.data.items[3].name, res.data.items[4].name];
-                        console.log(names);
                         setNames(names);
                         let photos = [res.data.items[0].album.images[0].url, res.data.items[1].album.images[0].url, res.data.items[2].album.images[0].url , res.data.items[3].album.images[0].url, res.data.items[4].album.images[0].url];
                         setPhotos(photos);

@@ -1,7 +1,7 @@
 .dashboard{
     background: linear-gradient(180deg, rgba(138,232,238,1) 0%, rgba(124,194,219,1) 7%, rgba(110,154,200,1) 15%, rgba(85,86,167,1) 36%, rgba(42,25,107,1) 58%, rgba(21,6,79,1) 71%, rgba(19,9,61,1) 80%);
     width: 100%;
-    height: 2000px;
+    height: 3000px;
     position: relative;
 }
 
@@ -351,4 +351,68 @@
     background-color: hsla(14, 100%, 40%, 0.6);
 
     transform:rotate(-60deg);
+}
+
+
+.dashboard-top-genres-section
+{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top:1950px;
+    z-index: 1;
+}
+
+.dashboard-top-genres-section-blur
+{
+    position: absolute;
+
+}
+
+.dashboard-top-genres-section-blur::after,
+.dashboard-top-genres-section-blur::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    z-index: -1;
+    filter:blur(150px);
+    border-radius: 50% 50% 50%;
+    margin-bottom: auto;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 400px;
+
+}
+
+.dashboard-top-genres-section-blur::after{
+    background-color: hsla(187, 63%, 38%, 0.8);
+
+    transform:rotate(40deg);
+}
+
+.dashboard-top-genres-section-blur::before{
+    background-color: #00FAFA;
+
+    transform:rotate(-40deg);
+}
+
+.dashboard-top-genres-section-title
+{
+    width: 95%;
+    height: 15%;
+    color: hsla(0, 0%, 100%, 0.7);
+    font-family: 'Inter Bold';
+    font-size: 35px;
+    padding-left: 5%;
+}
+
+.dashboard-top-genres-chart-section
+{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
