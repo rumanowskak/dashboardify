@@ -1,0 +1,26 @@
+.dashboard-top-genres-panel
+{
+    width: 350px;
+    height: 350px;
+    background-color: hsla(0, 0%, 85%, 0.5);
+    border-radius: 50%;
+    z-index: 1;
+    -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5), -4px -4px 4px 0px rgba(0, 0, 0, 0.5) ;
+    -moz-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5), -4px -4px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5), -4px -4px 4px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.recharts-wrapper svg
+{
+    white-space: nowrap;
+    overflow-clip-margin:500px;
+}
+
+.recharts-layer path
+{
+    transform: translateZ(-1px);
+}
