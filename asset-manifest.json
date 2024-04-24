@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/dashboardify/static/css/main.1e86e68b.css",
+    "main.js": "/dashboardify/static/js/main.76e9d31b.js",
+    "static/media/Inter-ExtraBold.ttf": "/dashboardify/static/media/Inter-ExtraBold.4164cfba15dbca5f37aa.ttf",
+    "static/media/Inter-Bold.ttf": "/dashboardify/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
+    "static/media/Inter-SemiBold.ttf": "/dashboardify/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
+    "static/media/Inter-Medium.ttf": "/dashboardify/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
+    "static/media/Inter-Light.ttf": "/dashboardify/static/media/Inter-Light.02850f28027788580733.ttf",
+    "static/media/Inter-Regular.ttf": "/dashboardify/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
+    "static/media/miley_cyrus.png": "/dashboardify/static/media/miley_cyrus.6a7ae347b99c3b692b0f.png",
+    "static/media/blond.jpg": "/dashboardify/static/media/blond.c2e8fe6368ecc93b7d86.jpg",
+    "static/media/nicki_minaj.png": "/dashboardify/static/media/nicki_minaj.404a9e37c780031b681d.png",
+    "static/media/weekend_after_hours.jpg": "/dashboardify/static/media/weekend_after_hours.1fe32368b0ceb7f6d238.jpg",
+    "static/media/taylor_midnights.png": "/dashboardify/static/media/taylor_midnights.6d77c8cca2ccc5b6718d.png",
+    "static/media/Spotify_Logo_RGB_Green.png": "/dashboardify/static/media/Spotify_Logo_RGB_Green.0c4ae91bae23217d39c9.png",
+    "static/media/rihanna.png": "/dashboardify/static/media/rihanna.1d8f2f83198db7d0a7fc.png",
+    "static/media/tyler.png": "/dashboardify/static/media/tyler.d22289fe223d0226dfa9.png",
+    "static/media/LeftArrow.svg": "/dashboardify/static/media/LeftArrow.91e1d3fb7b5ac46bd3415281919ef193.svg",
+    "static/media/RightArrow.svg": "/dashboardify/static/media/RightArrow.33b1f9360746905c25483a39486d0850.svg",
+    "static/media/FastBackwards.svg": "/dashboardify/static/media/FastBackwards.d9f76b0193a995106d61752b998ffa20.svg",
+    "static/media/FastForward.svg": "/dashboardify/static/media/FastForward.b6c1eb517ad4e37c22b1db1076a20880.svg",
+    "index.html": "/dashboardify/index.html",
+    "static/media/Pause.svg": "/dashboardify/static/media/Pause.e99bdb5a7a35b01012a3b9767ebc352c.svg",
+    "static/media/Play.svg": "/dashboardify/static/media/Play.aeec84e6a7e74e440273aae3e95ff061.svg",
+    "main.1e86e68b.css.map": "/dashboardify/static/css/main.1e86e68b.css.map",
+    "main.76e9d31b.js.map": "/dashboardify/static/js/main.76e9d31b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e86e68b.css",
+    "static/js/main.76e9d31b.js"
+  ]
+}
