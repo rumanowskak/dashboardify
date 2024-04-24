@@ -19,8 +19,3 @@
     white-space: nowrap;
     overflow-clip-margin:500px;
 }
-
-.recharts-layer path
-{
-    transform: translateZ(-1px);
-}

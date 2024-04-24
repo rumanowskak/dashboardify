@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import TopSongsArtistsItem from './TopSongsArtistsItem';
+import { DateRangeState } from '../../atoms/DateRange';
+import { useRecoilValue } from 'recoil';
 
 
 interface TopSongsArtistsPanelInterface
@@ -14,6 +16,8 @@ function TopSongsArtistsPanel({type}:TopSongsArtistsPanelInterface)
 {
     const [names, setNames] = useState<any[]>([]);
     const [photos, setPhotos] = useState<any[]>([]);
+    const dateRange = useRecoilValue(DateRangeState);
+
     useEffect(()=>{
         let token = window.localStorage.getItem("token");
         if(token)
@@ -21,7 +25,7 @@ function TopSongsArtistsPanel({type}:TopSongsArtistsPanelInterface)
             switch(type)
             {
                 case "songs":{
-                    axios.get("https://api.spotify.com/v1/me/top/tracks",{
+                    axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${dateRange}`,{
                         headers:{
                             Authorization: `Bearer ${token}`
                         },
@@ -38,7 +42,7 @@ function TopSongsArtistsPanel({type}:TopSongsArtistsPanelInterface)
                     break;
                 }
                 case "artists":{
-                    axios.get("https://api.spotify.com/v1/me/top/artists",{
+                    axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${dateRange}`,{
                         headers:{
                             Authorization: `Bearer ${token}`
                         },
@@ -57,7 +61,7 @@ function TopSongsArtistsPanel({type}:TopSongsArtistsPanelInterface)
             }
 
         }
-    },[])
+    },[dateRange])
 
     return(
         <div className="top-songs-artists-panel">

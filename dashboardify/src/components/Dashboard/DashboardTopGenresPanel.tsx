@@ -1,16 +1,19 @@
 import '../../css/Dashboard/DashboardTopGenresPanel.css'
-import { PieChart, Pie, Legend, ResponsiveContainer, Sector, Cell} from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Sector, Cell} from 'recharts';
 import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios'
+import { DateRangeState } from '../../atoms/DateRange';
+import { useRecoilValue } from 'recoil';
 
 function DashboardTopGenresPanel()
 {
     const [genres, setGenres] = useState<any[]>([]);
+    const dateRange = useRecoilValue(DateRangeState);
     useEffect(()=>{
         let token = window.localStorage.getItem("token");
         if (token)
         {
-            axios.get("https://api.spotify.com/v1/me/top/artists",{
+            axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${dateRange}`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 },
@@ -58,7 +61,7 @@ function DashboardTopGenresPanel()
                     setGenres(top_genres);
                 })
         }
-    },[])
+    },[dateRange])
 
     const COLORS = ['#DB0444', '#00DB87', '#FE770F', '#432683', '#720000' ];
 

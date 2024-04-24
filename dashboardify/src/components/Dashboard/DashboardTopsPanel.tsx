@@ -1,9 +1,9 @@
 import '../../css/Dashboard/DashboardTopsPanel.css'
-import { UserTokenState } from '../../atoms/UserToken';
-import { useRecoilValue } from 'recoil';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
+import { DateRangeState } from '../../atoms/DateRange';
+import { useRecoilValue } from 'recoil';
 
 function DashboardTopsPanel()
 {
@@ -17,6 +17,8 @@ function DashboardTopsPanel()
     const [tops, setTops] = useState<any[]>([]);
     const [topsPhotos, setTopsPhotos]= useState<any[]>([]);
     const [iterator, setIterator] = useState(0);
+    const dateRange = useRecoilValue(DateRangeState);
+
     let timer:any;
 
 
@@ -31,7 +33,7 @@ function DashboardTopsPanel()
         let token = window.localStorage.getItem("token");
         if (token)
         {
-            axios.get("https://api.spotify.com/v1/me/top/artists",{
+            axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${dateRange}`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 },
@@ -45,7 +47,7 @@ function DashboardTopsPanel()
             })   
 
 
-            axios.get("https://api.spotify.com/v1/me/top/tracks",{
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${dateRange}`,{
             headers:{
                 Authorization: `Bearer ${token}`
             },
@@ -58,7 +60,7 @@ function DashboardTopsPanel()
                 setTrackPhoto(res.data.items[0].album.images[0].url);    
             })
 
-            axios.get("https://api.spotify.com/v1/me/top/tracks",{
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${dateRange}`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 },
@@ -103,7 +105,7 @@ function DashboardTopsPanel()
                 })
 
         }
-    },[])
+    },[dateRange])
 
     useEffect(()=>{
         handleTopsChange();
@@ -162,7 +164,7 @@ function DashboardTopsPanel()
                 </div>
             </div>
             <div className='dashboard-tops-image'>
-                <img src={topsPhotos[iterator]} style={{borderRadius:(iterator===0)?'50%':'0%'}}></img>
+                <img src={topsPhotos[iterator]}></img>
             </div>
         </div>
     );
