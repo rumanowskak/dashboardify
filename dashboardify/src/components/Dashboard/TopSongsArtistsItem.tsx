@@ -24,7 +24,7 @@ function TopSongsArtistsItem({number,image, name, type}:TopSongsArtistsItemInter
                 {number}.
             </div>
             <div className='top-songs-artists-item-image'>
-                <img src={image} style={{borderRadius:(type ==="artists")?'50%':'0%'}}></img>
+                <img src={image}></img>
             </div>
             <div className='top-songs-artists-item-name'>
                 {(newName)?newName:name}

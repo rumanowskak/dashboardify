@@ -3,20 +3,22 @@ import LeftArrowIcon from '../../assets/images/LeftArrow.svg';
 import RightArrowIcon from '../../assets/images/RightArrow.svg'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import { DateRangeState } from '../../atoms/DateRange';
+import { useRecoilValue } from 'recoil';
 
 function TopAlbumsGallery()
 {
 
     const [albums, setAlbums] = useState<any[]>([]);
     const [albumsPhotos, setAlbumsPhotos] = useState<any[]>([]);
+    const dateRange = useRecoilValue(DateRangeState);
 
     useEffect(()=>{
         let token = window.localStorage.getItem("token");
         if(token)
         {
             
-            axios.get("https://api.spotify.com/v1/me/top/tracks",{
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${dateRange}`,{
                 headers:{
                     Authorization: `Bearer ${token}`
                 },
@@ -78,7 +80,7 @@ function TopAlbumsGallery()
                 })
         }
 
-    },[])
+    },[dateRange])
 
     const [leftBackgroundPhoto, setLeftBackgroundPhoto] = useState(albumsPhotos[albumsPhotos.length-1]);
     const [mainPhoto, setMainPhoto] = useState(albumsPhotos[0]);

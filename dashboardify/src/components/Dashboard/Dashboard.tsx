@@ -1,15 +1,23 @@
 import '../../css/Dashboard/Dashboard.css'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DashboardTopsPanel from './DashboardTopsPanel';
 import { UserTokenState } from '../../atoms/UserToken';
 import { useRecoilState } from 'recoil';
 import TopSongsArtistsPanel from './TopSongsArtistsPanel';
 import TopAlbumsGallery from './TopAlbumsGallery';
 import DashboardTopGenresPanel from './DashboardTopGenresPanel';
+import ScatterPlot from './ScatterPlot';
+import { DateRangeState } from '../../atoms/DateRange';
+import SpotifyIcon from '../../assets/images/Spotify_Logo_RGB_Green.png'
 
 function Dashboard()
 {
     const [token, setToken] = useRecoilState(UserTokenState);
+    const [dateRange, setDateRange] = useRecoilState(DateRangeState);
+    const [button1Class, setButton1Class] = useState("unclicked-class");
+    const [button2Class, setButton2Class] = useState("clicked-class");
+    const [button3Class, setButton3Class] = useState("unclicked-class");
+
 
     useEffect(()=>{
         const hash = window.location.hash;
@@ -26,11 +34,60 @@ function Dashboard()
             }
         }
     },[])
+
+    function handleShortTermButtonClicked()
+    {
+        setDateRange("short_term");
+        if(button1Class === "unclicked-class")
+        {
+            setButton1Class("clicked-class");
+            setButton2Class("unclicked-class");
+            setButton3Class("unclicked-class");
+        }else
+            setButton1Class("unclicked-class");
+    }
+    function handleMediumTermButtonClicked()
+    {
+        setDateRange("medium_term");
+        if(button2Class === "unclicked-class")
+        {
+            setButton2Class("clicked-class");
+            setButton1Class("unclicked-class");
+            setButton3Class("unclicked-class");
+        }else
+            setButton2Class("unclicked-class");
+    }
+    function handleLongTermButtonClicked()
+    {
+        setDateRange("long_term");
+        if(button3Class === "unclicked-class")
+        {
+            setButton3Class("clicked-class");
+            setButton1Class("unclicked-class");
+            setButton2Class("unclicked-class");
+        }else
+            setButton3Class("unclicked-class");
+    }
+
+
     return(
         <div className="dashboard">
             <div className='dashboard-header dashboard-header-blur'>
                 <div className='dashboard-header-header'>
-
+                    <div className='dashboard-header-header-section'>
+                        <button className={button1Class} onClick={handleShortTermButtonClicked}>
+                            Month
+                        </button>
+                        <button className={button2Class} onClick={handleMediumTermButtonClicked}>
+                            6 months
+                        </button>
+                        <button className={button3Class} onClick={handleLongTermButtonClicked}>
+                            1 year
+                        </button>
+                    </div>
+                    <div className='spotify-logo'>
+                        <img src={SpotifyIcon}></img>
+                    </div>
                 </div>
                 <div className='dashboard-main-header'>
                     <div className='dashboard-header-tops'>
@@ -108,6 +165,14 @@ function Dashboard()
                 </div>
                 <div className='dashboard-top-genres-chart-section'>
                     <DashboardTopGenresPanel/>
+                </div>
+            </div>
+            <div className='dashboard-scatter-plot-section'>
+                <ScatterPlot/>
+            </div>
+            <div className='dashboard-footer-section dashboard-footer-section-blur'>
+                <div className='footer'>
+                    &copy; Katarzyna Rumanowska 2024
                 </div>
             </div>
         </div>

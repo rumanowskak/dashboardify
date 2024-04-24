@@ -1,8 +1,9 @@
 .dashboard{
     background: linear-gradient(180deg, rgba(138,232,238,1) 0%, rgba(124,194,219,1) 7%, rgba(110,154,200,1) 15%, rgba(85,86,167,1) 36%, rgba(42,25,107,1) 58%, rgba(21,6,79,1) 71%, rgba(19,9,61,1) 80%);
     width: 100%;
-    height: 3000px;
+    height: 3300px;
     position: relative;
+    overflow: hidden;
 }
 
 .dashboard-header{
@@ -49,6 +50,59 @@
 .dashboard-header .dashboard-header-header{
     width: 100%;
     height: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-header .dashboard-header-header .spotify-logo{
+    width: auto;
+    height: 100%;
+    display: flex;
+}
+
+.dashboard-header .dashboard-header-header .spotify-logo img{
+    min-width: 70px;
+    margin: 15px;
+
+}
+
+.dashboard-header .dashboard-header-header .dashboard-header-header-section{
+    width: 35%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.dashboard-header .dashboard-header-header .dashboard-header-header-section button{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Bold';
+    font-size: 25px;
+    color: rgb(91, 91, 91);
+    border: none;
+    outline: none;
+}
+
+.dashboard-header .dashboard-header-header .dashboard-header-header-section .unclicked-class{
+    background: transparent;
+    width: 150px;
+    height: 40px;
+}
+
+.dashboard-header .dashboard-header-header .dashboard-header-header-section .clicked-class{
+    border-radius: 40px;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: black;
+
 }
 
 .dashboard-header .dashboard-main-header
@@ -415,4 +469,79 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.dashboard-scatter-plot-section
+{
+    width: 95%;
+    height: 500px;
+    position: absolute;
+    top:2650px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.dashboard-footer-section
+{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+
+    z-index: 1;
+}
+
+
+.dashboard-footer-section-blur
+{
+    position: absolute;
+}
+
+.dashboard-footer-section-blur::after,
+.dashboard-footer-section-blur::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    z-index: -1;
+    filter:blur(100px);
+    border-radius: 50% 50% 50%;
+    margin-bottom: 0;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 50px;
+
+}
+
+.dashboard-footer-section-blur::after{
+    background-color: hsla(241, 100%, 50%, 0.6);
+
+    transform:rotate(20deg);
+
+}
+
+.dashboard-footer-section-blur::before{
+    background-color: #FF006B;
+
+    transform:rotate(-20deg);
+
+}
+
+.footer{
+    background: #3B2B68;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    font-family: 'Inter Medium';
+    font-size: 15px;
+    color: hsla(0, 0%, 100%, 0.5);
+
 }
